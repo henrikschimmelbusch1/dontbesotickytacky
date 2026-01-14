@@ -16,34 +16,38 @@
 
 @layer components {
   .apple-button {
-    @apply px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ease-out;
+    @apply px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ease-out active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
   }
 
   .apple-button-primary {
-    @apply apple-button bg-blue-600 text-white hover:bg-blue-700 active:scale-95;
+    @apply apple-button bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-lg;
   }
 
   .apple-button-secondary {
-    @apply apple-button bg-gray-100 text-gray-900 hover:bg-gray-200 active:scale-95;
+    @apply apple-button bg-gray-100 text-gray-900 hover:bg-gray-200;
   }
 
   .apple-button-ghost {
-    @apply apple-button text-blue-600 hover:bg-blue-50 active:scale-95;
+    @apply apple-button text-blue-600 hover:bg-blue-50;
   }
 
   .apple-card {
-    @apply bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden;
+    @apply bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 overflow-hidden;
+  }
+
+  .apple-card-header {
+    @apply px-6 py-4 border-b border-gray-100 flex items-center justify-between font-semibold text-gray-900;
   }
 
   .apple-input {
-    @apply w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all;
+    @apply w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium;
   }
 
   .apple-panel-header {
-    @apply px-6 py-4 border-b border-gray-100 font-semibold text-gray-900;
+    @apply apple-card-header;
   }
 
   .apple-slider {
-    @apply w-full h-1 bg-gray-200 rounded-full appearance-none cursor-pointer accent-blue-600;
+    @apply w-full h-1.5 bg-gray-100 rounded-full appearance-none cursor-pointer accent-blue-600;
   }
 }

@@ -28,8 +28,9 @@ export function createInitialGameState(): GameState {
     return {
         board: createLarge(),
         currentPlayer: 'X',
-        activeBoardPath: null, // Start with no constraint (or maybe center? Standard is usually anywhere)
+        activeBoardPath: null,
         winner: null,
+        gameName: 'Don\'t Be Ticky Tacky',
     };
 }
 
@@ -173,5 +174,6 @@ export function applyMove(gameState: GameState, move: Move): GameState {
         currentPlayer: nextPlayer,
         activeBoardPath: nextActivePath,
         winner: newBoard.owner,
+        gameName: gameState.gameName,
     };
 }

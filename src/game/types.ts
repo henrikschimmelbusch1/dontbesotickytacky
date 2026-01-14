@@ -29,6 +29,7 @@ export type GameState = {
     // This means they must play in LargeBoard.grid[L3_index].grid[L2_index]
     activeBoardPath: [number, number] | null;
     winner: Winner;
+    gameName: string;
 };
 
 export type Move = {

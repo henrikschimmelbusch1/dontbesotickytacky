@@ -22,7 +22,9 @@ export class NetworkManager {
     // Initialize as Host
     public async hostGame(): Promise<string> {
         return new Promise((resolve, reject) => {
-            this.peer = new Peer();
+            // Generate a 6-digit numeric ID
+            const numericId = Math.floor(100000 + Math.random() * 900000).toString();
+            this.peer = new Peer(numericId);
 
             this.peer.on('open', (id) => {
                 console.log('My peer ID is: ' + id);
